@@ -42,10 +42,5 @@ public class theObjService {
 	
 	public void deleteTheObject(theObject obj) {
 		repository.delete(obj);
-	}
-	
-	public void helloWorld() {
-	
-	}
-	
+	}	
 }

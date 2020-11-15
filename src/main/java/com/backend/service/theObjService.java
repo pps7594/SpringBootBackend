@@ -44,4 +44,8 @@ public class theObjService {
 		repository.delete(obj);
 	}
 	
+	public void helloWorld() {
+	
+	}
+	
 }

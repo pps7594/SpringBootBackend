@@ -19,12 +19,14 @@ public class theObjService {
 	/* GET */
 	public List<theObject> getObjectList(){
 		//code
-		return new ArrayList<theObject>();
+		List<theObject> objList = new ArrayList<>();
+		repository.findAll().forEach(objList::add);
+		return objList;
 	}
 	
-	public theObject getDB(String id){
+	public theObject getObject(String id){
 		//code
-		return new theObject();
+		return repository.findById(id).orElse(null);
 	}
 	
 	
@@ -35,6 +37,7 @@ public class theObjService {
 	
 	public void updateTheObject(theObject obj) {
 		theObject newObj = repository.findById(obj.getId()).get();
+		
 		newObj.setDescription(obj.getDescription());
 		newObj.setTheFile(obj.getTheFile());
 		repository.save(newObj);

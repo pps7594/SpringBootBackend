@@ -19,7 +19,7 @@ public class theObject {
 		this.description = description;
 		this.theFile = theFile;
 	}
-	
+
 	public String getId() {
 		return id;
 	}
@@ -38,6 +38,12 @@ public class theObject {
 	public void setTheFile(String theFile) {
 		this.theFile = theFile;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return ("ID: "+getId()+"\n"+
+				"Description: "+getDescription()+"\n"+
+				"FileName: "+getTheFile())
+				.replace("\"","");
+	}
 }
